@@ -11,17 +11,16 @@ class CardGeneratorTest < Minitest::Test
   def test_can_read_file_to_array
     filename = './lib/cards.txt'
     generator_1 = CardGenerator.new(filename)
-    line_1 = "What is 5 + 5?,10"
+    line_1 = "What is 5 + 5?,10\n"
 
-    assert_equal Array, generator_1.file_to_array.class
-    assert_equal line_1, generator_1.file_to_array[0]
+    assert_equal Array, generator_1.file_to_array(filename).class
+    assert_equal line_1, generator_1.file_to_array(filename)[0]
   end
 
   def can_parse_lines_to_question_answer_pairs
     filename = './lib/cards.txt'
     generator_1 = CardGenerator.new(filename)
     question_answer_1 = ["What is 5 + 5?", "10"]
-    answer_2 = "red panda"
 
     assert_equal question_answer_1, generator_1.parse_lines_to_questions_and_answers
   end
