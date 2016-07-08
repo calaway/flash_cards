@@ -27,11 +27,3 @@ class CardGenerator
     convert_question_answers_to_cards(parsed_lines)
   end
 end
-
-# filename = './lib/cards.txt'
-# generator_1 = CardGenerator.new(filename)
-# unparsed_lines = generator_1.file_to_array(filename)
-# puts unparsed_lines.inspect
-# parsed_lines = parse_lines_to_question_answer_pairs(unparsed_lines)
-# puts parsed_lines.inspect
-# # convert_question_answers_to_cards(parsed_lines)
